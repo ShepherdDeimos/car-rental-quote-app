@@ -14,11 +14,14 @@
     <div class="form-group">
       <label>Age:</label>
       <input type="number" placeholder="25" min="18" max="100" [(ngModel)]="customerAge">
+      <p> Age Entered: {{ customerAge() }} </p>
     </div>
 
     <div class="form-group">
       <label>Phone Number (Optional):</label>
-      <input type="tel" placeholder="(555) 123-4567">
+      <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567"
+      pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" [(ngModel)]="phoneNumber">
+      <p> Phone Number: {{ formatphoneNumber(phoneNumber() ) }} </p>
     </div>
 
     <div class="form-section">
@@ -26,22 +29,22 @@
     
     <div class="form-group">
       <label>Pickup Date:</label>
-      <input type="date">
+      <input type="date" id="pickupDate" name="pickupDate" [(ngModel)]="pickupDate">
     </div>
 
     <div class="form-group">
       <label>Pickup Time:</label>
-      <input type="time" value="10:00">
+      <input type="time" id="pickupTime" name="pickupTime" [(ngModel)]="pickupTime" value="10:00">
     </div>
 
         <div class="form-group">
       <label>Drop-off Date:</label>
-      <input type="date">
+      <input type="date" id="dropOffDate" name="dropOffDate" [(ngModel)]="dropOffDate">
     </div>
 
     <div class="form-group">
       <label>Drop-off Time:</label>
-      <input type="time" value="10:00">
+      <input type="time" id="dropoffTime" name="dropoffTime" [(ngModel)]="dropoffTime"  value="10:00">
     </div>
   </div>
 

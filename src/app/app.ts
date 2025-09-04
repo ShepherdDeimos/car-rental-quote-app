@@ -13,8 +13,31 @@ export class App {
   protected readonly title = signal('car-rental-quote-app');
 
   // Customer Information
-
   customerName = signal('');
-  customerAge = signal(0);
+  customerAge = signal(18);
+  phoneNumber = signal('');
+
+  formatphoneNumber(phone: string): string {
+    const cleaned = phone.replace(/\D/g, '');
+    if (cleaned.length === 10) {
+      return '(' + cleaned.slice(0, 3) + ') ' + cleaned.slice(3, 6) + '-' + cleaned.slice(6);
+    } else if (cleaned.length === 7) {
+      return cleaned.slice(0, 3) + '-' + cleaned.slice(3);
+    } else {
+      return phone;
+    }
+  };
+
+  // Rental Dates
+  pickupDate = signal(new Date);
+  dropOffDate = signal(new Date);
+  pickupTime = signal('10:00 AM');
+  dropoffTime = signal('10:00 AM');
+
+  // Car Details
+
+
+
+
+  
 }
-//hi 
